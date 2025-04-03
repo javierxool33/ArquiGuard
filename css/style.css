@@ -1,0 +1,263 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    font-family: "Alice", serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    background-color: #583b1f; /* Marrón oscuro */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: #a17f5f; /* Marrón más oscuro */
+}
+
+/* Menú móvil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+}
+
+/* Carrusel */
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Contenido */
+.contenido {
+    margin-top: 90px;
+    padding: 40px;
+    background-color: #F5F1E6;
+}
+#extraContent {
+    background-color: #f4f1eb; /* Color arena claro */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+#extraContent h2 {
+    font-family: "Alice", serif; /* Usa la tipografía Alice */
+    font-size: 28px;
+    color: #333; /* Texto oscuro */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+#extraContent p {
+    font-family: "Alice", serif;
+    font-size: 18px;
+    color: #444;
+    text-align: justify;
+}
+
+#btnLeerMas, #btnLeerMenos {
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+#btnLeerMas {
+    background-color: #8B5E3C; /* Marrón elegante */
+    color: white;
+}
+
+#btnLeerMas:hover {
+    background-color: #72492d; /* Marrón más oscuro */
+}
+
+#btnLeerMenos {
+    background-color: #504c34; /* Gris neutral */
+    color: white;
+}
+
+#btnLeerMenos:hover {
+    background-color: #2e76be; /* Gris más oscuro */
+}
+
+/* Estilos generales para la sección extra */
+#extraContent {
+    display: none; /* Oculto por defecto */
+}
+
+/* Oculta la sección extra por defecto */
+#extraContent {
+    display: none;
+    margin-top: 20px;
+}
+
+
+/* Menú móvil */
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        width: 100%;
+        background-color: #F5F1E6;
+        text-align: center;
+    }
+
+    .menu a {
+        padding: 15px;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+/* Sección del título */
+.hero {
+    text-align: center;
+    padding: 30px;
+    background-color: #f8f8f8;
+}
+
+.hero-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.resaltado {
+    color: #d4a017;
+    font-weight: bold;
+}
+
+p {
+            text-align: justify;
+        }
+
+/* Contenedor del texto (Izquierda) */
+.text-container {
+    background-color: #f4f1eb;
+    padding: 40px;
+    text-align: left;
+}
+
+/* Contenedor de la imagen (Derecha) */
+.image-container {
+    background-color: #5a4b3b;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Responsivo */
+@media (max-width: 767px) {
+    .text-container, .image-container {
+        padding: 20px;
+    }
+
+    .hero-title {
+        font-size: 22px;
+        text-align: center;
+    }
+}
+
+
+@media (max-width: 767px) {
+    section {
+        display: block;
+        text-align: center;
+    }
+
+    .texto, .imagen {
+        width: 100%;
+    }
+
+    .imagen img {
+        max-width: 60%;
+        margin-top: 15px;
+    }
+}
+
+footer {
+    background-color: #797979;
+    color: white;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Espaciado para mejor distribución */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-left ul {
+    list-style-position: inside; /* Asegura que los puntos estén alineados con los nombres */
+    padding-left: 0; /* Elimina el padding izquierdo para evitar desajustes */
+    margin: 0; /* Evita espacios extra */
+}
+
+.footer-right {
+    text-align: right;
+    font-weight: bold;
+}
+

@@ -1,0 +1,339 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-bottom: 70px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Tipografía */
+h2 {
+    font-family: "Alice", serif;
+    font-weight: 400;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    font-family: "Alice", serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+}
+
+/* Logo */
+.logo {
+    width: 90px;
+    height: auto;
+}
+
+/* Menú de navegación */
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    background-color: #583b1f; /* Marrón oscuro */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: #a17f5f; /* Marrón más oscuro */
+}
+
+/* Menú móvil */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 30px;
+    height: 3px;
+    background-color: black;
+    margin: 5px;
+}
+
+/* Ajustes al contenido para evitar superposición con el header */
+.contenido {
+    margin-top: 100px; /* Ajustado para el header fijo */
+    padding: 20px;
+    background-color: #e0d7cd;
+    min-height: calc(100vh - 80px); /* Asegura que el contenido ocupe el resto de la pantalla */
+}
+
+
+/* Botón marrón */
+.btn-brown, .btn-sand {
+    background-color: #633535;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-brown:hover, .btn-sand:hover {
+    background-color: #8B4513;
+}
+/* Responsivo */
+
+/* Responsivo (Móvil) */
+@media (max-width: 768px) {
+    /* Ajustar el header */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 15px;
+    }
+
+    /* Ocultar menú en móvil */
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        background-color: #F5F1E6;
+        border: 1px solid black;
+    }
+
+    .menu a {
+        padding: 10px;
+
+        background-color: #4B2E1D;
+ 
+        text-align: center;
+    }
+
+    .menu li {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu li a {
+        display: block;
+        padding: 15px;
+        color: white;
+    }
+
+    /* Mostrar el botón hamburguesa */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mostrar menú cuando esté activo */
+
+    .menu.active {
+        display: flex;
+    }
+}
+.contenido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: #e0d7cd;
+}
+.caja {
+    border: 1px solid black;
+    width: 100%;
+   
+  
+ 
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background-color: #797979;
+    color: white;
+    width: 100vw;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px; /* Espaciado para mejor distribución */
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-left ul {
+    list-style-position: inside; /* Asegura que los puntos estén alineados con los nombres */
+    padding-left: 0; /* Elimina el padding izquierdo para evitar desajustes */
+    margin: 0; /* Evita espacios extra */
+}
+
+.footer-right {
+    text-align: right;
+    font-weight: bold;
+}
+
+/*--------------------------CARRUSEL---------------------------------------*/
+
+.carrocel-cont {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+  
+  }
+  
+  .carrocel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    gap: 20px;
+  }
+  
+  .carrocel-item {
+    min-width: 33.33%;
+    position: relative;
+  }
+  
+  .carrocel-item img {
+    width: 95%;
+    display: block;
+  }
+  
+  .modal-bton {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: linear-gradient(to right, rgb(188, 144, 86), rgb(124, 111, 92)); /* Degradado de izquierda a derecha */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+
+  .modal-bton:hover{
+    padding: 14px 20px;
+   background-color: black;
+   color: #F5F1E6;
+   transform: .6s ease-in-out;
+  }
+  
+  .carrocel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+  }
+  
+  .carrocel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .mimodal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateY(100%);
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Corrección: Combinamos las transiciones */
+  }
+  
+  .mimodal.show {
+    opacity: 1;
+    transform: translateY(0%);
+    background-image: url(/oficial/img/co2.jpg);
+    background-size:cover;
+    background-position:right;
+    background-repeat:no-repeat;
+  
+  }
+  
+  .modal-contento {
+    background-image: linear-gradient(to right, rgb(188, 144, 86), rgb(124, 111, 92)); /* Degradado de izquierda a derecha */
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+  }
+  
+  .cerrar {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .cerrar:hover,
+  .cerrar:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .carrocel-controls button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    .modal-bton {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  
+    .modal-contento {
+      width: 90%;
+      margin: 10% auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .carrocel-controls button {
+      padding: 6px 12px;
+      font-size: 12px;
+    }
+  
+    .modal-bton {
+      padding: 4px 8px;
+      font-size: 10px;
+    }
+  }
