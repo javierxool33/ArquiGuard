@@ -280,7 +280,7 @@ footer {
   .mimodal.show {
     opacity: 1;
     transform: translateY(0%);
-    background-image: url(/oficial/img/co2.jpg);
+    background-image: url(/img/co2.jpg);
     background-size:cover;
     background-position:right;
     background-repeat:no-repeat;
